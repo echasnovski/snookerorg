@@ -1,0 +1,13 @@
+Package: snookerorg
+Version: 0.1.0
+Title: R Client for the snooker.org API
+Description: Provides functions for retrieving data from snooker.org API
+    <http://api.snooker.org/>.
+Authors@R: person("Evgeni", "Chasnovski", email = "evgeni.chasnovski@gmail.com",
+    role = c("aut", "cre"))
+Depends: R (>= 3.2)
+Imports: jsonlite, dplyr
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
