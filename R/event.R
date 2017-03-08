@@ -1,0 +1,65 @@
+#' Description of \strong{event} data.frame
+#'
+#' @format A data.frame. Columns which likely to be used as factors record
+#'   not available data as "Unknown". Other record as \code{NA}.
+#'   The columns are:
+#' \describe{
+#'   \item{id}{<int>: identificator of event}
+#'   \item{name}{<chr>: name of event}
+#'   \item{startDate}{<dttm>: start date of event}
+#'   \item{endDate}{<dttm>: end date of event}
+#'   \item{sponsor}{<chr>: event's sponsor name}
+#'   \item{season}{<int>: season event was played}
+#'   \item{type}{<chr>: type of event (Amateur, Invitational, Ladies Ranking,
+#'   Players Tour Championship, Qualifying, Qualifying School, Ranking,
+#'   Seniors Event, Teams Event, Unknown)}
+#'   \item{num}{<int>: ?}
+#'   \item{venue}{<chr>: name of venue event was played}
+#'   \item{city}{<chr>: city name event was played}
+#'   \item{country}{<chr>: country name event was played}
+#'   \item{discipline}{<chr>: discipline of event
+#'   (snooker, six-red snooker, Power Snooker)}
+#'   \item{main}{<int>: identificator of the main event in case
+#'   the event is qualifying}
+#'   \item{sex}{<chr>: sex of the players allowed (Both, Men, Women)}
+#'   \item{ageGroup}{<chr>: age group of event's players
+#'   (O - all players, S - seniors, U21 - under 21, Unknown - not available)}
+#'   \item{url}{<chr>: URL of the event}
+#'   \item{related}{<chr>: the name of the events group event is related to
+#'   (many levels, e.g. "world" for World Championship,
+#'   "uk" for UK Championship, "" for separate events etc.)}
+#'   \item{stage}{<chr>: stage event represents inside "main" event
+#'   (F - main stage, Q - qualifying, QS - qualifying school,
+#'   Unknown - not available)}
+#'   \item{valueType}{<chr>: event's type code (somewhat incomplete)}
+#'   \item{shortName}{<chr>: short name of event}
+#'   \item{worldSnookerId}{<int>: identificator in World Snooker database/site}
+#'   \item{rankingType}{<chr>: ranking type of event (WR - world rankings,
+#'   LWR - ladies world rankings, QS - qualifying school,
+#'   Unknown - not available) (somewhat incomplete)}
+#'   \item{eventPredictionId}{<int>: identificator for
+#'   event prediction contest (?)}
+#'   \item{team}{<lgl>: whether event is a team one}
+#'   \item{format}{<int>: identificator of format (1 - ?, 2 - ?, 3 - ?)}
+#'   \item{twitter}{<chr>: twitter account for the event (NA - not available)}
+#'   \item{hashTag}{<chr>: twitter hashtag for the event (NA - not available)}
+#'   \item{conversionRate}{<dbl>: ?}
+#'   \item{allRoundsAdded}{<lgl>: whether all rounds of the event
+#'   are added to database}
+#'   \item{photoURLs}{<chr>: URL for event's photos}
+#'   \item{numCompetitors}{<int>: number of competitors in main event
+#'   (sometimes differs from actual by +-1)}
+#'   \item{numUpcoming}{<int>: some number in case event is upcoming}
+#'   \item{numActive}{<int>: number of active matches in event (?)}
+#'   \item{numResults}{<int>: number of results added of event
+#'   (sometimes inaccurate)}
+#'   \item{note}{<chr>: note about event}
+#'   \item{commonNote}{<chr>: another note about event}
+#'   \item{defendingChampion}{<int>: identificator of player-defending
+#'   champion}
+#'   \item{previousEdition}{<int>: identificator of prious edition of
+#'   the event (not for all tournaments)}
+#' }
+#'
+#' @name event
+NULL
