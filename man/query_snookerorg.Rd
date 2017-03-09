@@ -17,7 +17,7 @@ Query api.snooker.org
 }
 \examples{
 # Returns NULL
-queryJSON()
+query_snookerorg()
 
 \dontrun{
 # Returns query for event with id 398.

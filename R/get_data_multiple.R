@@ -15,8 +15,11 @@
 #'   \code{get_event_matches} returns data.frame of \link[=match]{matches} in
 #'   a specific event.
 #'
-#'   \code{get_season_player_matches} returns data.frame of \link[=match]{matches} for
-#'   a specific player in a specific season.
+#'   \code{get_ongoing_matches} returns data.frame of \link[=match]{matches}
+#'   that are being played at the moment of query.
+#'
+#'   \code{get_season_player_matches} returns data.frame of
+#'   \link[=match]{matches} for a specific player in a specific season.
 #'
 #'   \code{get_event_players} returns data.frame of \link[=player]{players} in
 #'   a specific event. Column \code{status} is filled with \code{NA}.
@@ -28,6 +31,15 @@
 #'   \code{get_season_ama_players} returns data.frame of amateur
 #'   \link[=player]{players} in a specific season. Column \code{status} is
 #'   filled with \code{ama}.
+#'
+#'   \code{get_season_rankings} returns a data.frame of
+#'   \link[=ranking]{rankings}. For ongoing season result is the most up to
+#'   date official rankings. For ended seasons result is rankings at the end
+#'   of the season.
+#'
+#' @seealso \link{get_data_single} for querying data for single unit.
+#'
+#' \link{get_data_all} for querying all data for unit type.
 #'
 #' @examples \dontrun{
 #' # Get events that were played in season 2015-2016.
@@ -56,6 +68,16 @@ get_event_matches <- function(event_id) {
   query_snookerorg(
     get_api_arg(id = 6),
     get_event_arg(id = event_id)
+  ) %>%
+    format_match() %>%
+    return()
+}
+
+#' @rdname get_data_multiple
+#' @export
+get_ongoing_matches <- function() {
+  query_snookerorg(
+    get_api_arg(id = 7)
   ) %>%
     format_match() %>%
     return()
@@ -108,5 +130,16 @@ get_season_ama_players <- function(season_id) {
   ) %>%
     format_player() %>%
     add_player_status(status = "ama") %>%
+    return()
+}
+
+#' @rdname get_data_multiple
+#' @export
+get_season_rankings <- function(season_id) {
+  query_snookerorg(
+    get_ranking_arg(id = "MoneyRankings"),
+    get_season_arg(id = season_id)
+  ) %>%
+    format_ranking() %>%
     return()
 }

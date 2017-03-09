@@ -36,6 +36,10 @@
 #'   \link[=player]{players} for all seasons. Column \code{status} is filled
 #'   with \code{ama}.
 #'
+#' @seealso \link{get_data_single} for querying data for single unit.
+#'
+#' \link{get_data_multiple} for querying multiple data for one unit.
+#'
 #' @examples \dontrun{
 #' # Get events for all seasons
 #' get_all_events()

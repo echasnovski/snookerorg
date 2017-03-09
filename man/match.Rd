@@ -5,26 +5,26 @@
 \title{Description of \strong{match} data.frame}
 \description{
 \describe{
-  \item{id}{<int>: identificator of match}
-  \item{eventId}{<int>: identificator of match's event
+  \item{id}{<int>: identifier of match}
+  \item{eventId}{<int>: identifier of match's event
   (column "id" in \strong{event} data.frame)}
   \item{round}{<int>: round number (unknown decoding)}
   \item{number}{<int>: number of match inside round}
-  \item{player1Id}{<int>: identificator of player 1
+  \item{player1Id}{<int>: identifier of player 1
   (column "id" in \strong{player} data.frame)}
   \item{score1}{<int>: number of won frames by player 1}
   \item{walkover1}{<lgl>: whether the win of player 1 was scored
   by the technical reasons}
-  \item{player2Id}{<int>: identificator of player 2
+  \item{player2Id}{<int>: identifier of player 2
   (column "id" in \strong{player} data.frame)}
   \item{score2}{<int>: number of won frames by player 2}
   \item{walkover2}{<lgl>: whether the win of player 2 was scored
   by the technical reasons}
-  \item{winnerId}{<int>: identificator of match's winner
+  \item{winnerId}{<int>: identifier of match's winner
   (column "id" in \strong{player} data.frame)}
   \item{unfinished}{<lgl>: whether the match is unfinished}
   \item{onBreak}{<lgl>: whether the match is on break}
-  \item{worldSnookerId}{<int>: identificator of the match in
+  \item{worldSnookerId}{<int>: identifier of the match in
   World Snooker database/website}
   \item{liveURL}{<chr>: URL for match's live scoring}
   \item{detailsURL}{<chr>: URL for match's details}
@@ -46,4 +46,22 @@
   \item{note}{<chr>: match note}
   \item{extendedNote}{<chr>: match extended note}
 }
+}
+\seealso{
+\link{get_match} for querying data about single match
+by its identifier.
+
+\link{get_event_matches} for querying data about matches in specific event.
+
+\link{get_ongoing_matches} for querying data about matches that
+are being played.
+
+\link{get_season_player_matches} for querying data about matches of
+specific player in specific season.
+
+\link{get_all_matches} for querying data about all available matches
+(has long execution time).
+
+\link{get_all_player_matches} for querying data about all available matches
+of specific player.
 }

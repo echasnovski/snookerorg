@@ -70,3 +70,8 @@ Service api.snooker.org doesn't have an option of querying all
 get_all_events()
 }
 }
+\seealso{
+\link{get_data_single} for querying data for single unit.
+
+\link{get_data_multiple} for querying multiple data for one unit.
+}

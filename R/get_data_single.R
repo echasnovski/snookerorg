@@ -1,19 +1,19 @@
 #' Get data for a single unit
 #'
 #' These functions return data about event, match or player by
-#' the respective identificators.
+#' the respective identifiers.
 #'
 #' @param event_id Event id in character, integer or numeric form
 #' @param round_id Round id in character, integer or numeric form
 #' @param match_num Match number in character, integer or numeric form
 #' @param player_id Player id in character, integer or numeric form
 #'
-#' @details Identificator for \strong{event} is \code{event_id}.
+#' @details Identifier for \strong{event} is \code{event_id}.
 #'
-#'   Identificator for \strong{match} is combination of \code{event_id},
+#'   Identifier for \strong{match} is combination of \code{event_id},
 #'   \code{round_id} and \code{match_num}.
 #'
-#'   Identificator for \strong{player} is \code{player_id}.
+#'   Identifier for \strong{player} is \code{player_id}.
 #'
 #' @return \code{get_event} returns a data.frame with 1 row and columns
 #'   described in \link{event}.
@@ -30,6 +30,10 @@
 #'   \link[=get_data_all]{get_all_players},
 #'   \link[=get_data_all]{get_all_pro_players},
 #'   \link[=get_data_all]{get_all_ama_players}.
+#'
+#' @seealso \link{get_data_multiple} for querying multiple data for one unit.
+#'
+#' \link{get_data_all} for querying all data for unit type.
 #'
 #' @examples \dontrun{
 #' # Get data about event 398

@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' # Returns NULL
-#' queryJSON()
+#' query_snookerorg()
 #'
 #' \dontrun{
 #' # Returns query for event with id 398.
@@ -18,7 +18,7 @@ query_snookerorg <- function(...) {
   if (args == "") {
     return(NULL)
   } else {
-    return(fromJSON(paste0("http://api.snooker.org/?", args)))
+    return(jsonlite::fromJSON(paste0("http://api.snooker.org/?", args)))
   }
 }
 
@@ -44,6 +44,8 @@ get_player_arg <- get_arg_function("p")
 get_season_arg <- get_arg_function("s")
 
 get_status_arg <- get_arg_function("st")
+
+get_ranking_arg <- get_arg_function("rt")
 
 
 # Functions for formatting query results ----------------------------------

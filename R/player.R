@@ -1,7 +1,7 @@
 #' Description of \strong{player} data.frame
 #'
 #' \describe{
-#'   \item{id}{<int>: identificator of player}
+#'   \item{id}{<int>: identifier of player}
 #'   \item{type}{<int>: correctness type of player
 #'   (1 - correct, 2 - anonymous)}
 #'   \item{firstName}{<chr>: first name of player}
@@ -26,6 +26,32 @@
 #'   \item{status}{<chr>: status of player
 #'   (pro - professional, ama - amateur)}
 #' }
+#'
+#' @seealso \link{get_player} for querying data about player by his/her
+#' identifier.
+#'
+#' \link{get_event_players} for querying data about players in specific event.
+#' Returns described data.frame with \code{status} filled with \code{NA}.
+#'
+#' \link{get_season_pro_players} for querying data about professional players
+#' in specific season. Returns described data.frame with \code{status} filled
+#' with \code{pro}.
+#'
+#' \link{get_season_ama_players} for querying data about amateur players
+#' in specific season. Returns described data.frame with \code{status} filled
+#' with \code{ama}.
+#'
+#' \link{get_all_players} for querying data about all available players.
+#' Returns described data.frame with \code{status} filled with both \code{pro}
+#' and \code{ama}.
+#'
+#' \link{get_all_pro_players} for querying data about all available
+#' professional players. Returns described data.frame with \code{status} filled
+#' with \code{pro}.
+#'
+#' \link{get_all_ama_players} for querying data about all available
+#' amateur players. Returns described data.frame with \code{status} filled
+#' with \code{ama}.
 #'
 #' @name player
 NULL

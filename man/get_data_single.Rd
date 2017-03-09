@@ -41,15 +41,15 @@ get_player(player_id)
 }
 \description{
 These functions return data about event, match or player by
-the respective identificators.
+the respective identifiers.
 }
 \details{
-Identificator for \strong{event} is \code{event_id}.
+Identifier for \strong{event} is \code{event_id}.
 
-  Identificator for \strong{match} is combination of \code{event_id},
+  Identifier for \strong{match} is combination of \code{event_id},
   \code{round_id} and \code{match_num}.
 
-  Identificator for \strong{player} is \code{player_id}.
+  Identifier for \strong{player} is \code{player_id}.
 }
 \examples{
 \dontrun{
@@ -62,4 +62,9 @@ get_match(event_id = 398, round_id = 4, match_num = 1)
 # Get data about player 1
 get_player(player_id = 1)
 }
+}
+\seealso{
+\link{get_data_multiple} for querying multiple data for one unit.
+
+\link{get_data_all} for querying all data for unit type.
 }

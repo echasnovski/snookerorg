@@ -1,6 +1,15 @@
 # Format query results
 
+is_bad_query <- function(query) {
+  identical(query, NA) ||
+    identical(query, "") ||
+    identical(query, NULL)
+}
+
 format_event <- function(event_query) {
+  if (is_bad_query(event_query)) {
+    return(NULL)
+  }
   event_query %>%
     make_column_names() %>%
     rename(id = iD,
@@ -22,6 +31,9 @@ format_event <- function(event_query) {
 }
 
 format_match <- function(match_query) {
+  if (is_bad_query(match_query)) {
+    return(NULL)
+  }
   match_query %>%
     make_column_names() %>%
     rename(
@@ -45,6 +57,9 @@ format_match <- function(match_query) {
 }
 
 format_player <- function(player_query) {
+  if (is_bad_query(player_query)) {
+    return(NULL)
+  }
   player_query %>%
     make_column_names() %>%
     rename(id = iD,
@@ -56,5 +71,17 @@ format_player <- function(player_query) {
 add_player_status <- function(player_query, status = "pro") {
   player_query %>%
     mutate(status = status) %>%
+    return()
+}
+
+format_ranking <- function(ranking_query) {
+  if (is_bad_query(ranking_query)) {
+    return(NULL)
+  }
+  ranking_query %>%
+    make_column_names() %>%
+    rename(id = iD,
+           playerId = playerID) %>%
+    mutate(sum = as.integer(sum)) %>%
     return()
 }

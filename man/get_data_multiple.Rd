@@ -4,15 +4,19 @@
 \alias{get_data_multiple}
 \alias{get_season_events}
 \alias{get_event_matches}
+\alias{get_ongoing_matches}
 \alias{get_season_player_matches}
 \alias{get_event_players}
 \alias{get_season_pro_players}
 \alias{get_season_ama_players}
+\alias{get_season_rankings}
 \title{Get multiple data for one unit}
 \usage{
 get_season_events(season_id)
 
 get_event_matches(event_id)
+
+get_ongoing_matches()
 
 get_season_player_matches(season_id, player_id)
 
@@ -21,6 +25,8 @@ get_event_players(event_id)
 get_season_pro_players(season_id)
 
 get_season_ama_players(season_id)
+
+get_season_rankings(season_id)
 }
 \arguments{
 \item{season_id}{Year of a season start}
@@ -36,8 +42,11 @@ get_season_ama_players(season_id)
   \code{get_event_matches} returns data.frame of \link[=match]{matches} in
   a specific event.
 
-  \code{get_season_player_matches} returns data.frame of \link[=match]{matches} for
-  a specific player in a specific season.
+  \code{get_ongoing_matches} returns data.frame of \link[=match]{matches}
+  that are being played at the moment of query.
+
+  \code{get_season_player_matches} returns data.frame of
+  \link[=match]{matches} for a specific player in a specific season.
 
   \code{get_event_players} returns data.frame of \link[=player]{players} in
   a specific event. Column \code{status} is filled with \code{NA}.
@@ -49,6 +58,11 @@ get_season_ama_players(season_id)
   \code{get_season_ama_players} returns data.frame of amateur
   \link[=player]{players} in a specific season. Column \code{status} is
   filled with \code{ama}.
+
+  \code{get_season_rankings} returns a data.frame of
+  \link[=ranking]{rankings}. For ongoing season result is the most up to
+  date official rankings. For ended seasons result is rankings at the end
+  of the season.
 }
 \description{
 These functions return multiple data for a specific unit.
@@ -65,4 +79,9 @@ get_season_events(season_id = 2015)
 # Get matches that were played in event with id 398.
 get_event_players(event_id = 398)
 }
+}
+\seealso{
+\link{get_data_single} for querying data for single unit.
+
+\link{get_data_all} for querying all data for unit type.
 }
