@@ -64,13 +64,14 @@ format_player <- function(player_query) {
     make_column_names() %>%
     rename(id = iD,
            url = uRL) %>%
-    mutate(born = as.POSIXct(born, tz = "UTC")) %>%
+    mutate(born = replace_empty_str(born, NA_character_) %>%
+             as.POSIXct(tz = "UTC")) %>%
     return()
 }
 
 add_player_status <- function(player_query, status = "pro") {
   player_query %>%
-    mutate(status = status) %>%
+    mutate(status = rep(status, nrow(player_query))) %>%
     return()
 }
 

@@ -39,7 +39,7 @@ simplify_match <- function(match_data) {
 #' @rdname simplify
 #' @export
 simplify_player <- function(player_data) {
-  player_id %>%
+  player_data %>%
     select(
       id, firstName, middleName, lastName, nationality, sex, born, status
     )

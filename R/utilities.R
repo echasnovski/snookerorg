@@ -13,6 +13,7 @@
 #' # Returns query for event with id 398.
 #' query_snookerorg("e=398")
 #' }
+#' @export
 query_snookerorg <- function(...) {
   args <- paste0(unlist(list(...)), collapse = "&")
   if (args == "") {
