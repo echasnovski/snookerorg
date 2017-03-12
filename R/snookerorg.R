@@ -1,4 +1,4 @@
-#' @importFrom dplyr "%>%" tbl_df rename mutate select arrange if_else
+#' @importFrom dplyr "%>%" rename_ mutate_ select_ arrange_ if_else
 #' @importFrom utils setTxtProgressBar txtProgressBar
 #'
 NULL

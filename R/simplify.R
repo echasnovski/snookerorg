@@ -17,9 +17,9 @@ NULL
 #' @export
 simplify_event <- function(event_data) {
   event_data %>%
-    select(
-      id, name, startDate, endDate, sponsor, season,
-      type, venue, city, country, discipline, sex, ageGroup
+    select_(
+      "id", "name", "startDate", "endDate", "sponsor", "season",
+      "type", "venue", "city", "country", "discipline", "sex", "ageGroup"
     ) %>%
     return()
 }
@@ -28,10 +28,10 @@ simplify_event <- function(event_data) {
 #' @export
 simplify_match <- function(match_data) {
   match_data %>%
-    select(
-      id, eventId, round, number, player1Id, score1, walkover1,
-      player2Id, score2, walkover2, winnerId,
-      startDate, endDate, scheduledDate, frameScores
+    select_(
+      "id", "eventId", "round", "number", "player1Id", "score1", "walkover1",
+      "player2Id", "score2", "walkover2", "winnerId",
+      "startDate", "endDate", "scheduledDate", "frameScores"
     ) %>%
     return()
 }
@@ -40,7 +40,8 @@ simplify_match <- function(match_data) {
 #' @export
 simplify_player <- function(player_data) {
   player_data %>%
-    select(
-      id, firstName, middleName, lastName, nationality, sex, born, status
+    select_(
+      "id", "firstName", "middleName", "lastName", "nationality",
+      "sex", "born", "status"
     )
 }
