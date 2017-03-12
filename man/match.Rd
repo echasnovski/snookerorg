@@ -3,7 +3,11 @@
 \name{match}
 \alias{match}
 \title{Description of \strong{match} data.frame}
-\description{
+\format{A data.frame. Columns which likely to be used as factors record
+  not available data as "Unknown". Other record as \code{NA}.
+  Rows are arranged from the latest ended match to the earliest.
+  The columns are:
+
 \describe{
   \item{id}{<int>: identifier of match}
   \item{eventId}{<int>: identifier of match's event
@@ -45,7 +49,9 @@
   \item{sessions}{<chr>: information about sessions}
   \item{note}{<chr>: match note}
   \item{extendedNote}{<chr>: match extended note}
-}
+}}
+\description{
+Description of \strong{match} data.frame
 }
 \seealso{
 \link{get_match} for querying data about single match

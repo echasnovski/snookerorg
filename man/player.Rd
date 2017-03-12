@@ -3,7 +3,10 @@
 \name{player}
 \alias{player}
 \title{Description of \strong{player} data.frame}
-\description{
+\format{A data.frame. Columns which likely to be used as factors record
+  not available data as "Unknown". Other record as \code{NA}.
+  The columns are:
+
 \describe{
   \item{id}{<int>: identifier of player}
   \item{type}{<int>: correctness type of player
@@ -29,7 +32,9 @@
   \item{info}{<chr>: additional information about player}
   \item{status}{<chr>: status of player
   (pro - professional, ama - amateur)}
-}
+}}
+\description{
+Description of \strong{player} data.frame
 }
 \seealso{
 \link{get_player} for querying data about player by his/her

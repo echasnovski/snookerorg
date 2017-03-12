@@ -1,5 +1,10 @@
 #' Description of \strong{match} data.frame
 #'
+#' @format A data.frame. Columns which likely to be used as factors record
+#'   not available data as "Unknown". Other record as \code{NA}.
+#'   Rows are arranged from the latest ended match to the earliest.
+#'   The columns are:
+#'
 #' \describe{
 #'   \item{id}{<int>: identifier of match}
 #'   \item{eventId}{<int>: identifier of match's event

@@ -1,5 +1,9 @@
 #' Description of \strong{player} data.frame
 #'
+#' @format A data.frame. Columns which likely to be used as factors record
+#'   not available data as "Unknown". Other record as \code{NA}.
+#'   The columns are:
+#'
 #' \describe{
 #'   \item{id}{<int>: identifier of player}
 #'   \item{type}{<int>: correctness type of player
