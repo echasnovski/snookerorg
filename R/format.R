@@ -10,6 +10,7 @@ format_event <- function(event_query) {
   if (is_bad_query(event_query)) {
     return(NULL)
   }
+
   event_query %>%
     make_column_names() %>%
     rename_(
@@ -44,14 +45,14 @@ format_event <- function(event_query) {
         commonNote = ~ replace_empty_str(commonNote, replacement = NA_character_)
       )
     ) %>%
-    arrange_(~ desc(endDate)) %>%
-    return()
+    arrange_(~ desc(endDate))
 }
 
 format_match <- function(match_query) {
   if (is_bad_query(match_query)) {
     return(NULL)
   }
+
   match_query %>%
     make_column_names() %>%
     rename_(
@@ -89,14 +90,14 @@ format_match <- function(match_query) {
                                            replacement = NA_character_)
       )
     ) %>%
-    arrange_(~ desc(endDate)) %>%
-    return()
+    arrange_(~ desc(endDate))
 }
 
 format_player <- function(player_query) {
   if (is_bad_query(player_query)) {
     return(NULL)
   }
+
   player_query %>%
     make_column_names() %>%
     rename_(
@@ -121,8 +122,7 @@ format_player <- function(player_query) {
         photo = ~ replace_empty_str(photo, replacement = NA_character_),
         info = ~ replace_empty_str(info, replacement = NA_character_)
       )
-    ) %>%
-    return()
+    )
 }
 
 add_player_status <- function(player_query, status = "pro") {
@@ -131,14 +131,14 @@ add_player_status <- function(player_query, status = "pro") {
       .dots = list(
         status = ~ rep(status, nrow(.))
       )
-    ) %>%
-    return()
+    )
 }
 
 format_ranking <- function(ranking_query) {
   if (is_bad_query(ranking_query)) {
     return(NULL)
   }
+
   ranking_query %>%
     make_column_names() %>%
     rename_(
@@ -151,6 +151,5 @@ format_ranking <- function(ranking_query) {
       .dots = list(
         sum = ~ as.integer(sum)
       )
-    ) %>%
-    return()
+    )
 }

@@ -20,8 +20,7 @@ simplify_event <- function(event_data) {
     select_(
       "id", "name", "startDate", "endDate", "sponsor", "season",
       "type", "venue", "city", "country", "discipline", "sex", "ageGroup"
-    ) %>%
-    return()
+    )
 }
 
 #' @rdname simplify
@@ -32,8 +31,7 @@ simplify_match <- function(match_data) {
       "id", "eventId", "round", "number", "player1Id", "score1", "walkover1",
       "player2Id", "score2", "walkover2", "winnerId",
       "startDate", "endDate", "scheduledDate", "frameScores"
-    ) %>%
-    return()
+    )
 }
 
 #' @rdname simplify

@@ -54,8 +54,7 @@ get_all_events <- function() {
     get_api_arg(id = 5),
     get_season_arg(id = -1)
   ) %>%
-    format_event() %>%
-    return()
+    format_event()
 }
 
 #' @rdname get_data_all
@@ -80,10 +79,11 @@ get_all_matches <- function(sleep_sec = 5, progress = TRUE) {
     if (progress) {
       setTxtProgressBar(pb, i)
     }
-    return(get_event_matches(event_id = events$id[i]))
+
+    get_event_matches(event_id = events$id[i])
   })
 
-  return(dplyr::bind_rows(event_match_list))
+  dplyr::bind_rows(event_match_list)
 }
 
 #' @rdname get_data_all
@@ -94,7 +94,8 @@ get_all_players <- function() {
   Sys.sleep(5)
   cat("Querying all amateur players\n")
   ama <- get_all_ama_players()
-  return(dplyr::bind_rows(pro, ama))
+
+  dplyr::bind_rows(pro, ama)
 }
 
 #' @rdname get_data_all
@@ -105,8 +106,7 @@ get_all_player_matches <- function(player_id) {
     get_player_arg(id = player_id),
     get_season_arg(id = -1)
   ) %>%
-    format_match() %>%
-    return()
+    format_match()
 }
 
 #' @rdname get_data_all
@@ -118,8 +118,7 @@ get_all_pro_players <- function() {
     get_season_arg(id = -1)
   ) %>%
     format_player() %>%
-    add_player_status(status = "pro") %>%
-    return()
+    add_player_status(status = "pro")
 }
 
 #' @rdname get_data_all
@@ -131,6 +130,5 @@ get_all_ama_players <- function() {
     get_season_arg(id = -1)
   ) %>%
     format_player() %>%
-    add_player_status(status = "ama") %>%
-    return()
+    add_player_status(status = "ama")
 }

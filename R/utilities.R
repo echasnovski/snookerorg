@@ -16,20 +16,20 @@
 #' @export
 query_snookerorg <- function(...) {
   args <- paste0(unlist(list(...)), collapse = "&")
+
   if (args == "") {
-    return(NULL)
+    NULL
   } else {
-    return(jsonlite::fromJSON(paste0("http://api.snooker.org/?", args)))
+    jsonlite::fromJSON(paste0("http://api.snooker.org/?", args))
   }
 }
 
 
 # Functions for construction API arguments --------------------------------
 get_arg_function <- function(api_char) {
-  res <- function(id) {
-    return(paste0(api_char, "=", id))
+  function(id) {
+    paste0(api_char, "=", id)
   }
-  return(res)
 }
 
 get_api_arg <- get_arg_function("t")
@@ -52,34 +52,38 @@ get_ranking_arg <- get_arg_function("rt")
 # Functions for formatting query results ----------------------------------
 make_camel_case <- function(char_vec) {
   char_vec_list <- strsplit(x = char_vec, split = "[^[:alnum:]]+")
-  res <- vapply(
+
+  vapply(
     X = char_vec_list,
     FUN = function(cur_name) {
       cur_name_res <- sapply(cur_name, function(cur_char) {
         substr(cur_char, 1, 1) <- toupper(substr(cur_char, 1, 1))
-        return(cur_char)
+
+        cur_char
       })
       substr(cur_name_res[1], 1, 1) <-
         tolower(substr(cur_name_res[1], 1, 1))
-      return(paste0(cur_name_res, collapse = ""))
+
+      paste0(cur_name_res, collapse = "")
     },
     FUN.VALUE = "character"
   )
-  return(res)
 }
 
 make_column_names <- function(data) {
-  res <- data
-  colnames(res) <- make_camel_case(colnames(res))
-  return(res)
+  colnames(data) <- make_camel_case(colnames(data))
+
+  data
 }
 
 convert_date <- function(date_vec) {
-  return(as.POSIXct(date_vec,
-                    format = "%Y-%m-%dT%H:%M:%SZ",
-                    tz = "UTC"))
+  as.POSIXct(
+    date_vec,
+    format = "%Y-%m-%dT%H:%M:%SZ",
+    tz = "UTC"
+  )
 }
 
 replace_empty_str <- function(char_vec, replacement = "Unknown") {
-  return(if_else(char_vec == "", replacement, char_vec))
+  if_else(char_vec == "", replacement, char_vec)
 }

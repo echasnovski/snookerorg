@@ -58,8 +58,7 @@ get_season_events <- function(season_id) {
     get_api_arg(id = 5),
     get_season_arg(id = season_id)
   ) %>%
-    format_event() %>%
-    return()
+    format_event()
 }
 
 #' @rdname get_data_multiple
@@ -69,8 +68,7 @@ get_event_matches <- function(event_id) {
     get_api_arg(id = 6),
     get_event_arg(id = event_id)
   ) %>%
-    format_match() %>%
-    return()
+    format_match()
 }
 
 #' @rdname get_data_multiple
@@ -79,8 +77,7 @@ get_ongoing_matches <- function() {
   query_snookerorg(
     get_api_arg(id = 7)
   ) %>%
-    format_match() %>%
-    return()
+    format_match()
 }
 
 #' @rdname get_data_multiple
@@ -91,8 +88,7 @@ get_season_player_matches <- function(season_id, player_id) {
     get_player_arg(id = player_id),
     get_season_arg(id = season_id)
   ) %>%
-    format_match() %>%
-    return()
+    format_match()
 }
 
 #' @rdname get_data_multiple
@@ -103,8 +99,7 @@ get_event_players <- function(event_id) {
     get_event_arg(id = event_id)
   ) %>%
     format_player() %>%
-    add_player_status(status = NA_character_) %>%
-    return()
+    add_player_status(status = NA_character_)
 }
 
 #' @rdname get_data_multiple
@@ -116,8 +111,7 @@ get_season_pro_players <- function(season_id) {
     get_season_arg(id = season_id)
   ) %>%
     format_player() %>%
-    add_player_status(status = "pro") %>%
-    return()
+    add_player_status(status = "pro")
 }
 
 #' @rdname get_data_multiple
@@ -129,8 +123,7 @@ get_season_ama_players <- function(season_id) {
     get_season_arg(id = season_id)
   ) %>%
     format_player() %>%
-    add_player_status(status = "ama") %>%
-    return()
+    add_player_status(status = "ama")
 }
 
 #' @rdname get_data_multiple
@@ -140,6 +133,5 @@ get_season_rankings <- function(season_id) {
     get_ranking_arg(id = "MoneyRankings"),
     get_season_arg(id = season_id)
   ) %>%
-    format_ranking() %>%
-    return()
+    format_ranking()
 }

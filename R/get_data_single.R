@@ -52,8 +52,7 @@ NULL
 #' @export
 get_event <- function(event_id) {
   query_snookerorg(get_event_arg(id = as.integer(event_id))) %>%
-    format_event() %>%
-    return()
+    format_event()
 }
 
 #' @rdname get_data_single
@@ -64,8 +63,7 @@ get_match <- function(event_id, round_id, match_num) {
     get_round_arg(id = as.integer(round_id)),
     get_match_num_arg(id = as.integer(match_num))
   ) %>%
-    format_match() %>%
-    return()
+    format_match()
 }
 
 #' @rdname get_data_single
@@ -73,6 +71,5 @@ get_match <- function(event_id, round_id, match_num) {
 get_player <- function(player_id) {
   query_snookerorg(get_player_arg(id = as.integer(player_id))) %>%
     format_player() %>%
-    add_player_status(status = NA_character_) %>%
-    return()
+    add_player_status(status = NA_character_)
 }
