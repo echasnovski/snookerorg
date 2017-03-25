@@ -29,15 +29,15 @@ numeric form}
 \item{player_id}{Vector of player ids in character, integer or numeric form}
 }
 \value{
-\code{get_events} returns a data.frame with columns
-  described in \link{event}.
+\code{get_events} returns \link{event} data.frame. Rows are arranged
+  from the latest ended event to the earliest.
 
-  \code{get_matches} returns a data.frame with columns
-  described in \link{match}.
+  \code{get_matches} returns \link{match} data.frame. Rows are arranged
+  from the latest ended match to the earliest.
 
-  \code{get_players} returns a data.frame with columns
-  described in \link{player}. Column \code{status} is filled with
-  \code{NA} because there is no information from performed query.
+  \code{get_players} returns \link{player} data.frame.
+  Column \code{status} is filled with \code{NA} because
+  there is no information from performed query.
   Information about player status can be obtained from calls to
   \link[=get_data_multiple]{get_season_pro_players},
   \link[=get_data_multiple]{get_season_ama_players},
@@ -57,6 +57,9 @@ Identifier for \strong{event} is \code{event_id}.
   vectors are recycled by standard R rules.
 
   Identifier for \strong{player} is \code{player_id}.
+
+  If there is no available data for particular identifier then it
+  will not be included in return value (silently).
 
   \code{sleep_sec} is introduced in order to not overload API servers.
   It can be not less than 1 second. If \code{progress == TRUE} text progress
