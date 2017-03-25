@@ -54,8 +54,7 @@
 Description of \strong{match} data.frame
 }
 \seealso{
-\link{get_match} for querying data about single match
-by its identifier.
+\link{get_matches} for querying data about matches by ID.
 
 \link{get_event_matches} for querying data about matches in specific event.
 

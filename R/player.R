@@ -31,8 +31,7 @@
 #'   (pro - professional, ama - amateur)}
 #' }
 #'
-#' @seealso \link{get_player} for querying data about player by his/her
-#' identifier.
+#' @seealso \link{get_players} for querying data about players by ID.
 #'
 #' \link{get_event_players} for querying data about players in specific event.
 #' Returns described data.frame with \code{status} filled with \code{NA}.

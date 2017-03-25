@@ -36,7 +36,7 @@
 #'   \link[=player]{players} for all seasons. Column \code{status} is filled
 #'   with \code{ama}.
 #'
-#' @seealso \link{get_data_single} for querying data for single unit.
+#' @seealso \link{get_data_by_id} for querying data by ID.
 #'
 #' \link{get_data_multiple} for querying multiple data for one unit.
 #'
@@ -59,7 +59,7 @@ get_all_events <- function() {
 
 #' @rdname get_data_all
 #' @export
-get_all_matches <- function(sleep_sec = 5, progress = TRUE) {
+get_all_matches <- function(sleep_sec = 1, progress = TRUE) {
   cat("Querying all events\n")
   events <- get_all_events()
 

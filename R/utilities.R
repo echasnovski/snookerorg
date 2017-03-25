@@ -93,3 +93,20 @@ convert_date <- function(date_vec) {
 replace_empty_str <- function(char_vec, replacement = "Unknown") {
   if_else(char_vec == "", replacement, char_vec)
 }
+
+
+# Functions for tracking progress -----------------------------------------
+initialize_pb <- function(max = 1) {
+  txtProgressBar(
+    min = 0, max = max,
+    initial = 0, char = "=",
+    style = 3
+  )
+}
+
+expand_args <- function(...){
+  dots <- list(...)
+  max_length <- max(sapply(dots, length))
+
+  do.call(cbind, lapply(dots, rep, length.out = max_length))
+}

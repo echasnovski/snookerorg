@@ -37,7 +37,7 @@
 #'   date official rankings. For ended seasons result is rankings at the end
 #'   of the season.
 #'
-#' @seealso \link{get_data_single} for querying data for single unit.
+#' @seealso \link{get_data_by_id} for querying data by ID.
 #'
 #' \link{get_data_all} for querying all data for unit type.
 #'

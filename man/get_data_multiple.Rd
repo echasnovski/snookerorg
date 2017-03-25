@@ -81,7 +81,7 @@ get_event_players(event_id = 398)
 }
 }
 \seealso{
-\link{get_data_single} for querying data for single unit.
+\link{get_data_by_id} for querying data by ID.
 
 \link{get_data_all} for querying all data for unit type.
 }

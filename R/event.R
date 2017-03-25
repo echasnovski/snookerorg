@@ -63,8 +63,7 @@
 #'   (not for all tournaments)}
 #' }
 #'
-#' @seealso \link{get_event} for querying data about single event
-#' by its identifier
+#' @seealso \link{get_events} for querying data about events by ID.
 #'
 #' \link{get_season_events} for querying data about events in specific season.
 #'
