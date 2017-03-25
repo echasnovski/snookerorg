@@ -59,7 +59,7 @@ Identifier for \strong{event} is \code{event_id}.
   Identifier for \strong{player} is \code{player_id}.
 
   If there is no available data for particular identifier then it
-  will not be included in return value (silently).
+  will not be included in return value (with appropriate message).
 
   \code{sleep_sec} is introduced in order to not overload API servers.
   It can be not less than 1 second. If \code{progress == TRUE} text progress

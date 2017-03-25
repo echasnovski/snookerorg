@@ -20,7 +20,7 @@
 #'   Identifier for \strong{player} is \code{player_id}.
 #'
 #'   If there is no available data for particular identifier then it
-#'   will not be included in return value (silently).
+#'   will not be included in return value (with appropriate message).
 #'
 #'   \code{sleep_sec} is introduced in order to not overload API servers.
 #'   It can be not less than 1 second. If \code{progress == TRUE} text progress
@@ -79,7 +79,15 @@ get_events <- function(event_id = integer(0),
 
     query_snookerorg(get_event_arg(id = as.integer(event_id[i])))
   })
-  res_event <- res_event[!sapply(res_event, is_bad_query)]
+
+  bad_query_vec <- sapply(res_event, is_bad_query)
+  if (sum(bad_query_vec) > 0) {
+    message(
+      paste0("There are no events with the following IDs:\n",
+             paste0(event_id[bad_query_vec], collapse = ", "))
+    )
+  }
+  res_event <- res_event[!bad_query_vec]
 
   if (length(res_event) == 0) {
     event_template
@@ -122,7 +130,20 @@ get_matches <- function(event_id = integer(0),
       get_match_num_arg(id = args[i, 3])
     )
   })
-  res_match <- res_match[!sapply(res_match, is_bad_query)]
+  bad_query_vec <- sapply(res_match, is_bad_query)
+  if (sum(bad_query_vec) > 0) {
+    bad_params <- data.frame(
+      event_id = args[bad_query_vec, 1],
+      round_id = args[bad_query_vec, 2],
+      match_num = args[bad_query_vec, 3]
+    )
+    message(
+      paste0("There are no events with the following IDs:\n",
+             paste0(capture.output(bad_params), collapse = "\n"))
+    )
+  }
+
+  res_match <- res_match[!bad_query_vec]
 
   if (length(res_match) == 0) {
     match_template
@@ -153,7 +174,16 @@ get_players <- function(player_id = integer(0),
 
     query_snookerorg(get_player_arg(id = as.integer(player_id[i])))
   })
-  res_player <- res_player[!sapply(res_player, is_bad_query)]
+
+  bad_query_vec <- sapply(res_player, is_bad_query)
+  if (sum(bad_query_vec) > 0) {
+    message(
+      paste0("There are players with the following IDs:\n",
+             paste0(player_id[bad_query_vec], collapse = ", "))
+    )
+  }
+
+  res_player <- res_player[!bad_query_vec]
 
   if (length(res_player) == 0) {
     player_template
