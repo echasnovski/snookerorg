@@ -12,21 +12,21 @@
 \alias{get_season_rankings}
 \title{Get multiple data for one unit}
 \usage{
-get_season_events(season_id)
+get_season_events(season_id = integer(0))
 
-get_event_matches(event_id)
+get_event_matches(event_id = integer(0))
 
 get_ongoing_matches()
 
-get_season_player_matches(season_id, player_id)
+get_season_player_matches(season_id = integer(0), player_id = integer(0))
 
-get_event_players(event_id)
+get_event_players(event_id = integer(0))
 
-get_season_pro_players(season_id)
+get_season_pro_players(season_id = integer(0))
 
-get_season_ama_players(season_id)
+get_season_ama_players(season_id = integer(0))
 
-get_season_rankings(season_id)
+get_season_rankings(season_id = integer(0))
 }
 \arguments{
 \item{season_id}{Year of a season start}

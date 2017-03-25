@@ -75,8 +75,8 @@ get_events <- function(event_id = integer(0),
     }
 
     query_snookerorg(get_event_arg(id = as.integer(event_id[i])))
-  }) %>%
-    "["(!sapply(., is_bad_query))
+  })
+  res_event <- res_event[!sapply(res_event, is_bad_query)]
 
   if (length(res_event) == 0) {
     event_template
@@ -118,8 +118,8 @@ get_matches <- function(event_id = integer(0),
       get_round_arg(id = args[i, 2]),
       get_match_num_arg(id = args[i, 3])
     )
-  }) %>%
-    "["(!sapply(., is_bad_query))
+  })
+  res_match <- res_match[!sapply(res_match, is_bad_query)]
 
   if (length(res_match) == 0) {
     match_template
@@ -149,8 +149,8 @@ get_players <- function(player_id = integer(0),
     }
 
     query_snookerorg(get_player_arg(id = as.integer(player_id[i])))
-  }) %>%
-    "["(!sapply(., is_bad_query))
+  })
+  res_player <- res_player[!sapply(res_player, is_bad_query)]
 
   if (length(res_player) == 0) {
     player_template

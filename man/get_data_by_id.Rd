@@ -7,11 +7,12 @@
 \alias{get_players}
 \title{Get data for a unit by ID}
 \usage{
-get_events(event_id, sleep_sec = 1, progress = TRUE)
+get_events(event_id = integer(0), sleep_sec = 1, progress = TRUE)
 
-get_matches(event_id, round_id, match_num, sleep_sec = 1, progress = TRUE)
+get_matches(event_id = integer(0), round_id = integer(0),
+  match_num = integer(0), sleep_sec = 1, progress = TRUE)
 
-get_players(player_id, sleep_sec = 1, progress = TRUE)
+get_players(player_id = integer(0), sleep_sec = 1, progress = TRUE)
 }
 \arguments{
 \item{event_id}{Vector of event ids in character, integer or numeric form}

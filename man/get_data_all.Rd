@@ -16,7 +16,7 @@ get_all_matches(sleep_sec = 1, progress = TRUE)
 
 get_all_players()
 
-get_all_player_matches(player_id)
+get_all_player_matches(player_id = integer(0))
 
 get_all_pro_players()
 
