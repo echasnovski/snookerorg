@@ -24,6 +24,12 @@ query_snookerorg <- function(...) {
   }
 }
 
+is_bad_query <- function(query) {
+  identical(query, NA) ||
+    identical(query, "") ||
+    identical(query, NULL)
+}
+
 
 # Functions for construction API arguments --------------------------------
 get_arg_function <- function(api_char) {

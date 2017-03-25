@@ -1,11 +1,5 @@
 # Format query results
 
-is_bad_query <- function(query) {
-  identical(query, NA) ||
-    identical(query, "") ||
-    identical(query, NULL)
-}
-
 format_event <- function(event_query) {
   if (is_bad_query(event_query)) {
     return(NULL)
