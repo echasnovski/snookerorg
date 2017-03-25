@@ -53,7 +53,11 @@ NULL
 
 #' @rdname get_data_multiple
 #' @export
-get_season_events <- function(season_id) {
+get_season_events <- function(season_id = integer(0)) {
+  if (length(season_id) == 0) {
+    return(event_template)
+  }
+
   query_snookerorg(
     get_api_arg(id = 5),
     get_season_arg(id = season_id)
@@ -63,7 +67,11 @@ get_season_events <- function(season_id) {
 
 #' @rdname get_data_multiple
 #' @export
-get_event_matches <- function(event_id) {
+get_event_matches <- function(event_id = integer(0)) {
+  if (length(event_id) == 0) {
+    return(match_template)
+  }
+
   query_snookerorg(
     get_api_arg(id = 6),
     get_event_arg(id = event_id)
@@ -82,7 +90,12 @@ get_ongoing_matches <- function() {
 
 #' @rdname get_data_multiple
 #' @export
-get_season_player_matches <- function(season_id, player_id) {
+get_season_player_matches <- function(season_id = integer(0),
+                                      player_id = integer(0)) {
+  if ((length(season_id) == 0) || (length(player_id) == 0)) {
+    return(match_template)
+  }
+
   query_snookerorg(
     get_api_arg(id = 8),
     get_player_arg(id = player_id),
@@ -93,7 +106,11 @@ get_season_player_matches <- function(season_id, player_id) {
 
 #' @rdname get_data_multiple
 #' @export
-get_event_players <- function(event_id) {
+get_event_players <- function(event_id = integer(0)) {
+  if (length(event_id) == 0) {
+    return(player_template)
+  }
+
   query_snookerorg(
     get_api_arg(id = 9),
     get_event_arg(id = event_id)
@@ -104,7 +121,11 @@ get_event_players <- function(event_id) {
 
 #' @rdname get_data_multiple
 #' @export
-get_season_pro_players <- function(season_id) {
+get_season_pro_players <- function(season_id = integer(0)) {
+  if (length(season_id) == 0) {
+    return(player_template)
+  }
+
   query_snookerorg(
     get_api_arg(id = 10),
     get_status_arg(id = "p"),
@@ -116,7 +137,11 @@ get_season_pro_players <- function(season_id) {
 
 #' @rdname get_data_multiple
 #' @export
-get_season_ama_players <- function(season_id) {
+get_season_ama_players <- function(season_id = integer(0)) {
+  if (length(season_id) == 0) {
+    return(player_template)
+  }
+
   query_snookerorg(
     get_api_arg(id = 10),
     get_status_arg(id = "a"),
@@ -128,7 +153,11 @@ get_season_ama_players <- function(season_id) {
 
 #' @rdname get_data_multiple
 #' @export
-get_season_rankings <- function(season_id) {
+get_season_rankings <- function(season_id = integer(0)) {
+  if (length(season_id) == 0) {
+    return(ranking_template)
+  }
+
   query_snookerorg(
     get_ranking_arg(id = "MoneyRankings"),
     get_season_arg(id = season_id)

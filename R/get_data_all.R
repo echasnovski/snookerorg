@@ -100,7 +100,11 @@ get_all_players <- function() {
 
 #' @rdname get_data_all
 #' @export
-get_all_player_matches <- function(player_id) {
+get_all_player_matches <- function(player_id = integer(0)) {
+  if (length(player_id) == 0) {
+    return(match_template)
+  }
+
   query_snookerorg(
     get_api_arg(id = 8),
     get_player_arg(id = player_id),

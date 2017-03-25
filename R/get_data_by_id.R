@@ -58,7 +58,8 @@ NULL
 
 #' @rdname get_data_by_id
 #' @export
-get_events <- function(event_id, sleep_sec = 1, progress = TRUE) {
+get_events <- function(event_id = integer(0),
+                       sleep_sec = 1, progress = TRUE) {
   if (length(event_id) == 0) {
     return(event_template)
   }
@@ -88,8 +89,10 @@ get_events <- function(event_id, sleep_sec = 1, progress = TRUE) {
 
 #' @rdname get_data_by_id
 #' @export
-get_matches <- function(event_id, round_id, match_num,
-                      sleep_sec = 1, progress = TRUE) {
+get_matches <- function(event_id = integer(0),
+                        round_id = integer(0),
+                        match_num = integer(0),
+                        sleep_sec = 1, progress = TRUE) {
   args <- expand_args(
     as.integer(event_id),
     as.integer(round_id),
@@ -129,7 +132,8 @@ get_matches <- function(event_id, round_id, match_num,
 
 #' @rdname get_data_by_id
 #' @export
-get_players <- function(player_id, sleep_sec = 1, progress = TRUE) {
+get_players <- function(player_id = integer(0),
+                        sleep_sec = 1, progress = TRUE) {
   if (length(player_id) == 0) {
     return(player_template)
   }
